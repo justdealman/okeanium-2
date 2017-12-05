@@ -2200,6 +2200,107 @@ div.checker,div.radio{position:relative}div.checker,div.checker input,div.checke
 .schedule-dummy {
 	display:none;
 }
+.filter-multiply {
+	position:relative;
+}
+.filter-multiply--header {
+	position:relative;
+	display:block;
+	cursor:pointer;
+	background:#ffffff;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+.filter-multiply.is-opened .filter-multiply--header {
+	-webkit-border-radius:4px 4px 0 0;
+	border-radius:4px 4px 0 0;
+}
+.filter-multiply--header label {
+	overflow:hidden;
+	display:block;
+	height:44px;
+	color:#0e1d47;
+	font-size:16px;
+	line-height:22px;
+	white-space:nowrap;
+	margin-right:38px;
+	padding:10px 0 12px 11px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.filter-multiply--header .item {
+	display:inline-block;
+}
+.filter-multiply--header .item i {
+	color:#c22841;
+	font-style:normal;
+}
+.filter-multiply--header .item:after {
+	content:',';
+	padding-right:3px;
+}
+.filter-multiply--header .item:last-child:after {
+	display:none;
+}
+.filter-multiply--header .button {
+	position:absolute;
+	right:0;
+	top:0;
+	display:block;
+	width:38px;
+	height:44px;
+	cursor:pointer;
+	line-height:44px;
+}
+.filter-multiply--header .button:after {
+	content:'';
+	position: absolute;
+	top:15px;
+	right:13px;
+	border-left:7px solid transparent;
+	border-right:7px solid transparent;
+	border-top:12px solid #0e1d47;
+}
+.filter-multiply__drop {
+	display:none;
+	overflow-y:auto;
+	position:absolute;
+	left:0;
+	top:44px;
+	width:100%;
+	z-index:50;
+	max-height:300px;
+	background:#d0dce6;
+	-webkit-border-radius:0 0 4px 4px;
+	border-radius:0 0 4px 4px;
+}
+.filter-multiply.is-opened .filter-multiply__drop {
+	display:block;
+}
+.filter-multiply__drop ul {
+	padding:10px 0 10px;
+	margin:0;
+}
+.filter-multiply__drop label {
+	position:relative;
+	display:block;
+	color:#0e1d47;
+	font-size:16px;
+	line-height:22px;
+	padding:5px 11px 5px 40px;
+}
+.filter-multiply__drop label .checker {
+	position:absolute;
+	left:11px;
+	top:7px;
+}
+.filter-multiply__drop label div.checker span {
+	border-top-color:#ffffff;
+}
+
+
 @media all and (max-width:1590px) {
 	.wrapper {
 		width:1000px;

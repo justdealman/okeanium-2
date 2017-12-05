@@ -339,4 +339,52 @@ $(function() {
 			scrollTop: t.offset().top
 		});
 	});
+	
+	
+	$('.filter-multiply--header').on('click', function() {
+		var t = $(this).parents('.filter-multiply');
+		if ( !t.hasClass('is-opened') ) {
+			t.addClass('is-opened');
+		} else {
+			t.removeClass('is-opened');
+		}	
+	});
+	$(document).on('click', function(e) {
+		if ( !$(e.target).closest('.filter-multiply--header').length && !$(e.target).closest('.filter-multiply__drop').length ) {
+			$('.filter-multiply').removeClass('is-opened');
+		}
+	});
+	$('.filter-multiply__drop input[type="checkbox"]').on('change', function() {
+		var label = $(this).parents('.filter-multiply').find('.filter-multiply--header label');
+		var name = $(this).parents('label').text();
+		var list = $(this).parents('ul');
+		if ( $(this).attr('name') == 'select-all' ) {
+			if ( $(this).is(':checked') ) {
+				$(this).parents('li').siblings('li').find('input[type="checkbox"]').prop('checked',true);
+				label.empty().append('<span class="item item-all">'+name+'</span>');
+			} else {
+				$(this).parents('li').siblings('li').find('input[type="checkbox"]').prop('checked',false);
+				label.text('Выбрать помещение...');
+			}
+		} else {
+			label.empty();
+			var counter = 0;
+			list.find('li').each(function() {
+				var ch = $(this).find('input[type="checkbox"]');
+				if ( ch.attr('name') == 'select-all' ) {
+					ch.attr('checked', false);
+				} else {
+					if ( ch.is(':checked') ) {
+						counter++;
+					}
+				}
+			});
+			if ( counter == 0 ) {
+				label.text('Выбрать помещение...');
+			} else {
+				label.text('Выбрано '+counter);
+			}
+		}
+		$.uniform.update();
+	});
 });
