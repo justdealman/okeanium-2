@@ -340,18 +340,22 @@ $(function() {
 		});
 	});
 	
-	
+	function updateFilter() {
+		$('form[name="filter"]').submit();
+	}
 	$('.filter-multiply--header').on('click', function() {
 		var t = $(this).parents('.filter-multiply');
 		if ( !t.hasClass('is-opened') ) {
 			t.addClass('is-opened');
 		} else {
 			t.removeClass('is-opened');
+			updateFilter();
 		}	
 	});
 	$(document).on('click', function(e) {
 		if ( !$(e.target).closest('.filter-multiply--header').length && !$(e.target).closest('.filter-multiply__drop').length ) {
 			$('.filter-multiply').removeClass('is-opened');
+			updateFilter();
 		}
 	});
 	$('.filter-multiply__drop input[type="checkbox"]').on('change', function() {
