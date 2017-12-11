@@ -353,7 +353,7 @@ $(function() {
 		}	
 	});
 	$(document).on('click', function(e) {
-		if ( !$(e.target).closest('.filter-multiply--header').length && !$(e.target).closest('.filter-multiply__drop').length ) {
+		if ( !$(e.target).closest('.filter-multiply--header').length && !$(e.target).closest('.filter-multiply__drop').length && $('.filter-multiply').hasClass('is-opened') ) {
 			$('.filter-multiply').removeClass('is-opened');
 			updateFilter();
 		}
