@@ -2299,8 +2299,6 @@ div.checker,div.radio{position:relative}div.checker,div.checker input,div.checke
 .filter-multiply__drop label div.checker span {
 	border-top-color:#ffffff;
 }
-
-
 @media all and (max-width:1590px) {
 	.wrapper {
 		width:1000px;
