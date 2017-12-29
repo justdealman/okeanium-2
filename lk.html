@@ -57,9 +57,105 @@
 				</a>
 			</div>
 			<div class="lk">
+				<h2 class="lk--title">Личный кабинет</h2>
+				<!--<span class="lk--freeze">Остаток дней заморозки: <strong>[15]</strong></span>-->
+				<span class="lk--name">Иванов Иван Иванович</span>
+				<div class="lk__manager">
+					<p>Мой персональный менеджер</p>
+					<span class="lk__manager--name">Иванова Ирина</span>
+				</div>
+				<button class="lk--button lk--button_ask">задать вопрос</button>
+				<span class="lk-card--title">Моя клубная карта</span>
+				<p class="lk--time">Время посещения с 7:00 до 01:00</p>
+				<div class="lk-card__grid">
+					<div class="lk-card__item">
+						<span class="lk-card--text">До окончания карты осталось</span>
+						<div class="lk-card__form">
+							<input type="text" value="365" disabled>
+							<span>дней</span><br>
+							<input type="text" value="----" disabled>
+							<span>посещений</span>
+						</div>
+					</div>
+				</div>
+				<span class="lk-card--title">Приостановка карты</span>
+				<div class="lk-card__grid">
+					<div class="lk-card__item">
+						<span class="lk-card--text">Осталось</span>
+						<div class="lk-card__form">
+							<input type="text" value="10" disabled>
+							<span>дней</span>
+						</div>
+						<div class="lk-card__button">
+							<button class="lk--button">Купить</button>
+						</div>
+					</div>
+					<div class="lk-card__item">
+						<span class="lk-card--text">Приостановить карту</span>
+						<div class="lk-card__form">
+							<span class="from">с</span>
+							<input type="text" value="11.02.17">
+							<span class="to">до</span>
+							<input type="text" value="11.03.17">
+						</div>
+						<div class="lk-card__button">
+							<button class="lk--button">ЗАМОРОЗИТЬ</button>
+						</div>
+					</div>
+					<div class="lk-card__item lk-card__item_highlight">
+						<span class="lk-card--text">Мои бонусы</span>
+						<div class="lk-card__form">
+							<input type="text" value="14" disabled>
+							<span>Дней</span>
+						</div>
+						<div class="lk-card__button">
+							<button class="lk--button">ХОЧУ БОНУСЫ</button>
+						</div>
+					</div>
+				</div>
+	
+				<hr class="lk--divider">
 				<div class="lk__item">
-					<h2 class="lk--title">Личный кабинет</h2>
-					<span class="lk--freeze">Остаток дней заморозки: <strong>[15]</strong></span>
+					<div class="lk__data">
+						<h3 class="lk__data--title">Дополнительные услуги</h3>
+						<div class="lk__data--row">
+							<div class="lk__data--item lk__data--header">
+								<span class="lk__data--cell">Наименование абонемента</span>
+								<span class="lk__data--cell lk__data--trainer">Тренер</span>
+								<span class="lk__data--cell lk__data--status">Статус</span>
+							</div>
+							<div class="lk__data--item">
+								<span class="lk__data--cell">Акробатика - 10 занятий</span>
+								<span class="lk__data--cell lk__data--trainer">Ковшова Анна</span>
+								<span class="lk__data--cell lk__data--status">Оплачено</span>
+							</div>
+						</div>
+					</div>
+					<div class="lk__controls">
+						<button class="lk--button">Добавить услугу</button>
+					</div>
+				</div>
+				<div class="lk__item">
+					<div class="lk__data">
+						<h3 class="lk__data--title">Мои записи</h3>
+						<div class="lk__data--row">
+							<div class="lk__data--item lk__data--header">
+								<span class="lk__data--cell">ФИО специалиста</span>
+								<span class="lk__data--cell lk__data--trainer">Дата визита</span>
+								<span class="lk__data--cell lk__data--status">Статус</span>
+							</div>
+							<div class="lk__data--item">
+								<span class="lk__data--cell">Главный врач</span>
+								<span class="lk__data--cell lk__data--trainer">10.11.2017</span>
+								<span class="lk__data--cell lk__data--status">Записано</span>
+							</div>
+						</div>
+					</div>
+					<div class="lk__controls">
+						<button class="lk--button">Новая запись</button>
+					</div>
+				</div>
+				<div class="lk__item">
 					<div class="lk__data">
 						<h3 class="lk__data--title">Мои данные</h3>
 						<div class="lk__data--item">
@@ -99,46 +195,6 @@
 					</div>
 					<div class="lk__controls">
 						<button class="lk--button">Изменить</button>
-					</div>
-				</div>
-				<div class="lk__item">
-					<div class="lk__data">
-						<h3 class="lk__data--title">Дополнительные услуги</h3>
-						<div class="lk__data--row">
-							<div class="lk__data--item lk__data--header">
-								<span class="lk__data--cell">Наименование абонемента</span>
-								<span class="lk__data--cell lk__data--trainer">Тренер</span>
-								<span class="lk__data--cell lk__data--status">Статус</span>
-							</div>
-							<div class="lk__data--item">
-								<span class="lk__data--cell">Акробатика - 10 занятий</span>
-								<span class="lk__data--cell lk__data--trainer">Ковшова Анна</span>
-								<span class="lk__data--cell lk__data--status">Оплачено</span>
-							</div>
-						</div>
-					</div>
-					<div class="lk__controls">
-						<button class="lk--button">Добавить услугу</button>
-					</div>
-				</div>
-				<div class="lk__item">
-					<div class="lk__data">
-						<h3 class="lk__data--title">Мои записи</h3>
-						<div class="lk__data--row">
-							<div class="lk__data--item lk__data--header">
-								<span class="lk__data--cell">ФИО специалиста</span>
-								<span class="lk__data--cell lk__data--trainer">Дата визита</span>
-								<span class="lk__data--cell lk__data--status">Статус</span>
-							</div>
-							<div class="lk__data--item">
-								<span class="lk__data--cell">Главный врач</span>
-								<span class="lk__data--cell lk__data--trainer">10.11.2017</span>
-								<span class="lk__data--cell lk__data--status">Записано</span>
-							</div>
-						</div>
-					</div>
-					<div class="lk__controls">
-						<button class="lk--button">Новая запись</button>
 					</div>
 				</div>
 			</div>
