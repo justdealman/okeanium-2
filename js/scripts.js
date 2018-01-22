@@ -261,7 +261,7 @@ $(function() {
 		var t = $('[data-target="'+$(this).attr('data-open')+'"]');
 		t.siblings('[data-target]').removeClass('is-opened is-active');
 		$('.fade-bg').addClass('is-opened');
-		t.addClass('is-opened');
+		t.wrap('<div class="modal-container"></div>').addClass('is-opened');
 		var h = $(window).scrollTop()+($(window).height()-t.outerHeight())/2;
 		var diff = 30;
 		if ( h < $(window).scrollTop()+(diff*2) ) {
@@ -270,11 +270,26 @@ $(function() {
 		t.css({
 			'top': h+'px'
 		}).addClass('is-active').siblings('[data-target]').removeClass('is-active');
+		$('body').addClass('is-locked');
 	});
-	$('[data-target] .modal--close, .fade-bg, [data-modal-close], .modal .reject').on('click', function(e) {
-		e.preventDefault();
+	function modalClose() {
 		$('[data-target], .fade-bg').removeClass('is-opened');
 		$('[data-open]').removeClass('is-active');
+		$('.modal').each(function() {
+			if ( $(this).parent().is('.modal-container') ) {
+				$(this).unwrap();
+			}
+		});
+		$('body').removeClass('is-locked');
+	}
+	$('[data-target] .modal--close, .fade-bg, [data-modal-close], .modal .reject').on('click', function(e) {
+		e.preventDefault();
+		modalClose();
+	});
+	$(document).on('click', '.modal-container', function(e) {
+		if ( e.target.className == 'modal-container' ) {
+			modalClose();
+		}
 	});
 	$('input, textarea').each(function() {
 		$(this).data('holder', $(this).attr('placeholder'));
