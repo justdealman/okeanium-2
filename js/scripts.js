@@ -262,10 +262,10 @@ $(function() {
 		t.siblings('[data-target]').removeClass('is-opened is-active');
 		$('.fade-bg').addClass('is-opened');
 		t.wrap('<div class="modal-container"></div>').addClass('is-opened');
-		var h = $(window).scrollTop()+($(window).height()-t.outerHeight())/2;
+		var h = ($(window).height()-t.outerHeight())/2;
 		var diff = 30;
-		if ( h < $(window).scrollTop()+(diff*2) ) {
-			h = $(window).scrollTop()+diff;
+		if ( h < diff*2 ) {
+			h = diff;
 		}
 		t.css({
 			'top': h+'px'
