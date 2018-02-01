@@ -1586,6 +1586,27 @@ body.is-locked {
 	right:0;
 	background:#6a6d7c;
 }
+.modal--agreement {
+	position:relative;
+	display:block;
+	font-size:16px;
+	line-height:22px;
+	padding:0 0 0 30px;
+	margin:0 0 22px;
+}
+.modal--agreement .checker {
+	position:absolute;
+	left:0;
+	top:1px;
+}
+.modal--agreement a {
+	color:#000000;
+	text-decoration:underline;
+}
+.modal--agreement a:hover {
+	color:#000000;
+	text-decoration:none;
+}
 
 .schedule--description {
 	font-size:18px;
