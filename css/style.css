@@ -2098,6 +2098,9 @@ body.is-locked {
 	-webkit-border-radius:2px;
 	border-radius:2px;
 }
+.about__video {
+	margin:0 0 18px;
+}
 .page_custom .content h1 {
 	font-size:30px;
 	line-height:36px;
@@ -3916,6 +3919,9 @@ body.is-locked {
 		width:100%;
 		max-width:290px;
 		margin:40px auto 30px;
+	}
+	.about__video {
+		margin:0 0 30px;
 	}
 	#map {
 		height:240px;

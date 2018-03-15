@@ -133,6 +133,23 @@ $(function() {
 			$('meta[name="viewport"]').attr('content','width=320, user-scalable=yes');
 		}
 	}
+	function videoRatio() {
+		$('[data-video]').each(function() {
+			var t = $(this).find('iframe');
+			var baseWidth = t.attr('width');
+			var baseHeight = t.attr('height');
+			var ratio = baseHeight/baseWidth;
+			var newWidth = $(this).outerWidth();
+			if ( newWidth > baseWidth ) {
+				newWidth = baseWidth;
+			}
+			var newHeight = newWidth*ratio;
+			t.css({
+				width: newWidth,
+				height: newHeight
+			});
+		});
+	}
 	function startApp() {
 		changeViewport();
 		detectDevice();
@@ -163,6 +180,9 @@ $(function() {
 		adaptiveImage();
 		if ( $('.schedule').length ) {
 			setScheduleSlider();
+		}
+		if ( $('[data-video]').length ) {
+			videoRatio();
 		}
 	}
 	startApp();
